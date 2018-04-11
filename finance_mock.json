@@ -1,0 +1,19 @@
+{
+	"name":"finance_mock",
+	"mocks":[
+		{
+			"name":"注册接口",
+			"url":"test1",
+			"methods":["GET","POST"],
+			"response":"test1 response",
+			"code":200
+		},
+		{
+			"name":"登录接口",
+			"url":"test2",
+			"methods":["POST"],
+			"response":"test2 response",
+			"code":200
+		}
+	]
+}

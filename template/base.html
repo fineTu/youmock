@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>YouMock</title>
+    {% block cust_head %}
+    {% endblock %}
+</head>
+<body>
+    <div id="container" style="margin:0 0; width:100%;">
+        <div id="content" style="width:1000px; margin: 0 auto;">
+            <div id="head" style="height:40px; width:100%; clear:both;">
+                <span style="float:left; height: 100%; font-size:22px; width:600px; color:#4e7ca1;">Welcome to YouMock!</span>
+                <span style="float:right; height: 100%;">
+                    <img style="width:30px;" src="{{ url_for('static', filename='img/cross.png') }} " >
+                </span>
+            </div>
+            <div style="clear:both;border-top:thin solid #ccc;"></div>
+            <div id="main">
+            {% block main_block %}
+                <span>main</span>
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

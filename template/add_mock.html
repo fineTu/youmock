@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block cust_head %}
+    <style>
+        span{
+            margin: 4px 8px;
+        }
+    </style>
+{% endblock %}
+{% block main_block %}
+    <div>
+        <span style="color:#4e7ca1; size:18px;">新增mock接口</span>
+    </div>
+    <div style="width: 1000px;">
+        <form action="board.php">
+            <fieldset style="border: none;">
+                <span style="float:left;">
+                    <label for="mock_name" >名称:</label>
+                    <input type="text" id="mock_name" name="name" align="left">
+                </span>
+                <span style="float:left;">
+                    <label for="url">url:</label>
+                    <input type="text" id="url" name="url" align="left">
+                </span>
+                <span style="float:left;">
+                    <label for="methods">methods:</label>
+                    <input type="checkbox" name="methods" value="GET" />GET
+                    <input type="checkbox" name="methods" value="POST" />POST<br>
+                </span>
+                <div style="clear:both; height:6px;"></div>
+                <span>
+                    <label style="vertical-align: top;" for="response">response:</label>
+                    <textarea id="response" name="response" cols="50" rows="5" align="left"></textarea>
+                </span>
+                <p>
+                    <input type="submit">
+                </p>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

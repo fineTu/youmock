@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block main_block %}
+{% for mock in mock_obj.mocks %}
+    <div style="margin-top:40px; clear:both;">
+        <div>
+            <span><b>{{ mock.name }}</b></span>
+            <span>[
+            {% for method in mock.methods %}
+                    {{ method }}{% if not loop.last %},{% endif %}
+            {% endfor %}
+            ]
+            </span>
+        </div>
+        <div>
+            <div style="color:#93b5cf">response:</div>
+            <div>{{ mock.response }}</div>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
