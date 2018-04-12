@@ -11,7 +11,7 @@
         <span style="color:#4e7ca1; size:18px;">新增mock接口</span>
     </div>
     <div style="width: 1000px;">
-        <form action="board.php">
+        <form method="post" action="/save">
             <fieldset style="border: none;">
                 <span style="float:left;">
                     <label for="mock_name" >名称:</label>
@@ -22,7 +22,7 @@
                     <input type="text" id="url" name="url" align="left">
                 </span>
                 <span style="float:left;">
-                    <label for="methods">methods:</label>
+                    <label>methods:</label>
                     <input type="checkbox" name="methods" value="GET" />GET
                     <input type="checkbox" name="methods" value="POST" />POST<br>
                 </span>

@@ -3,6 +3,8 @@ import os
 
 from flask import Flask,request
 import json
+
+from flask import redirect
 from flask import render_template
 
 # from web import main
@@ -36,12 +38,17 @@ def new():
     return render_template('add_mock.html')
 
 
-# @app.route("/save",methods=['GET','POST'])
-# def save():
-#     mock_bean = MockBean()
-#     mock_bean.name
-#     data_loader.add_mock()
-#     return render_template('index.html', mock_obj=data_loader.mock_obj)
+@app.route("/save",methods=['GET', 'POST'])
+def save():
+    mock_bean = MockBean()
+    mock_bean.name = request.form['name']
+    mock_bean.url = request.form['url']
+    mock_bean.methods = request.form['methods']
+    mock_bean.res_code = 200
+    mock_bean.response = request.form['response']
+    data_loader.add_mock(mock_bean)
+
+    return redirect('/index')
 
 
 def buildMockMap(jsonObj):

@@ -25,8 +25,8 @@ class DataLoader(object):
 
     def add_mock(self, mock_bean):
         mocks = self.mock_obj.get('mocks',[])
-        mocks.append(mock_bean.to_json_obj)
-        self.mock_map[self._build_mock_key(mock_bean.get('url'),mock_bean.get('methods'))] = mock_bean.to_json_obj
+        mocks.append(mock_bean.to_json_obj())
+        self.mock_map[self._build_mock_key(mock_bean.url,mock_bean.methods)] = mock_bean.to_json_obj()
         self._persist()
 
     def del_mock(self, key):
@@ -62,8 +62,17 @@ class DataLoader(object):
         return methods_str + '-' + url
 
     def _persist(self):
-        json_file = open(self.file_path, 'w')
-        json_file.write(json.dumps(self.mock_obj))
-        json_file.close()
+        temp_str = ''
+        try:
+            json_file = open(self.file_path, 'r')
+            temp_str = json_file.read()
+            json_file.close()
+            json_file = open(self.file_path, 'w')
+            json_file.write(json.dumps(self.mock_obj))
+        except Exception as e:
+            print e
+            json_file.write(temp_str)
+        finally:
+            json_file.close()
 
 
