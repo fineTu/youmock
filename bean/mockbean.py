@@ -3,6 +3,7 @@ import json
 
 
 class MockBean():
+    key = ''
     name = ''
     url = ''
     methods = []
@@ -11,6 +12,7 @@ class MockBean():
 
     def to_json_obj(self):
         jsonObj = {}
+        jsonObj['key'] = self.key
         jsonObj['name'] = self.name
         jsonObj['url'] = self.url
         jsonObj['methods'] = self.methods

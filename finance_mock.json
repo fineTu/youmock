@@ -1,1 +1,4 @@
-{"mocks": [{"url": "test1", "response": "test1 test1", "methods": ["GET", "POST"], "name": "test1"}, {"url": "testn", "methods": ["GET"], "response": "testn testn", "res_code": 200, "name": "\u6d4b\u8bd51"}, {"url": "testn2", "response": "{\"code\":0,\"msg\":\"\u6210\u529f\"}", "name": "\u6d4b\u8bd52", "res_code": 200, "methods": "POST"}], "name": "\u7cfb\u7edfA"}
+{
+    "mocks": [], 
+    "name": "\u7cfb\u7edfA"
+}
