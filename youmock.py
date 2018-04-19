@@ -14,7 +14,7 @@ from service.dataloader import DataLoader
 app = Flask(__name__, template_folder="template")
 # app.register_blueprint(main)
 
-base_dir = os.path.dirname(__file__)
+base_dir = os.path.dirname(os.path.realpath(__file__))
 data_loader = DataLoader(base_dir+'/finance_mock.json')
 
 @app.route("/mock/<url>",methods=['GET','POST'])
@@ -54,10 +54,5 @@ def delete(key):
     return redirect('/index')
 
 if __name__ == '__main__':
-    base_dir = os.path.dirname(__file__)
-    print base_dir
-    jsonfile = open(base_dir+'/finance_mock.json','r')
-    jsonObj = json.loads(jsonfile.read())
-    jsonfile.close()
     app.debug=True
     app.run(host='0.0.0.0',port=8080)
