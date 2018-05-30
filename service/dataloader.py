@@ -32,7 +32,8 @@ class DataLoader(object):
     def add_mock(self, mock_bean):
         mocks = self.mock_obj.get('mocks',[])
         mocks.append(mock_bean.to_json_obj())
-        self.mock_map[DataLoader.build_mock_key(mock_bean.url,mock_bean.methods)] = mock_bean.to_json_obj()
+        for method in mock_bean.methods:
+            self.mock_map[DataLoader.build_mock_key(mock_bean.url, method)] = mock_bean.to_json_obj()
         self._persist()
         self._sync_data()
 
@@ -58,7 +59,7 @@ class DataLoader(object):
         mocks = self.mock_obj.get('mocks', [])
         for index in range(0,len(self.mock_obj.get('mocks',[]))):
             mock = mocks[index]
-            if cmp(key, DataLoader.build_mock_key(mock.get('url'),mock.get('methods'))):
+            if cmp(key, DataLoader.build_mock_key(mock.get('url'),mock.get('methods'))) == 0:
                 return index, mock
 
     @classmethod

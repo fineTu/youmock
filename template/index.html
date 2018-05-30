@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block main_block %}
 {% for mock in mock_obj.mocks %}
-    <div style="margin-top:40px; clear:both;">
+    <div style="margin-top:60px; clear:both;">
         <div>
             <span><b>{{ mock.name }}</b></span>
             <span>[
@@ -15,9 +15,17 @@
                 <a href="/del/{{ mock.key }}">删除</a>
             </span>
         </div>
-        <div>
+        <div style="margin-top: 10px;">
+            <div style="color:#93b5cf">header:</div>
+            <div>
+                {% for item in mock.res_header %}
+                    {{ item[0] }} : {{ item[1] }}<br/>
+                {% endfor %}
+            </div>
+        </div>
+        <div style="margin-top: 10px;">
             <div style="color:#93b5cf">response:</div>
-            <div>{{ mock.response }}</div>
+            <div>{{ mock.res_body }}</div>
         </div>
     </div>
 {% endfor %}

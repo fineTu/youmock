@@ -1,0 +1,87 @@
+{
+    "mocks": [
+        {
+            "key": "[test3]-test3", 
+            "name": "test3", 
+            "url": "test3", 
+            "res_body": "test2", 
+            "res_code": 200, 
+            "res_header": [
+                [
+                    "Content-Type", 
+                    "application/x-www-form-urlencoded"
+                ], 
+                [
+                    "header1", 
+                    "header1"
+                ]
+            ], 
+            "methods": [
+                "GET"
+            ]
+        }, 
+        {
+            "res_code": 200, 
+            "name": "test4", 
+            "url": "test4", 
+            "res_body": "test4", 
+            "key": "[test4]-test4", 
+            "res_header": [
+                [
+                    "test4", 
+                    "test4header"
+                ]
+            ], 
+            "methods": [
+                "GET", 
+                "POST"
+            ]
+        }, 
+        {
+            "key": "[POST]-finance/facebank/personalRegisterSendSms", 
+            "name": "personalRegisterSendSms", 
+            "url": "finance/facebank/personalRegisterSendSms", 
+            "res_body": "{\"status\":true,\"message\":\"\u6210\u529f\",\"result\":{\"resp_code\":\"0000\",\"resp_message\":\"\u53d1\u9001\u77ed\u4fe1\u6210\u529f\",\"request_no\":\"3180105280152320180529000031\",\"phone_token\":\"ME20180529000033176311\"}}", 
+            "res_code": 200, 
+            "res_header": [
+                [
+                    ""
+                ]
+            ], 
+            "methods": [
+                "POST"
+            ]
+        }, 
+        {
+            "res_code": 200, 
+            "name": "personalRegisterAuthority", 
+            "url": "finance/facebank/personalRegisterAuthority", 
+            "res_body": "{\"status\":true,\"message\":\"\u6210\u529f\",\"result\":{\"resp_code\":\"0000\",\"resp_message\":\"\u9274\u6743\u6210\u529f\",\"request_no\":\"3180105280152320180529000031\"}}", 
+            "key": "[POST]-finance/facebank/personalRegisterAuthority", 
+            "res_header": [
+                [
+                    ""
+                ]
+            ], 
+            "methods": [
+                "POST"
+            ]
+        }, 
+        {
+            "key": "[POST]-finance/facebank/borrowerQuery", 
+            "name": "borrowerQuery", 
+            "url": "finance/facebank/borrowerQuery", 
+            "res_body": "{\"status\":true,\"message\":\"\u5931\u8d25\",\"result\":{\"resp_code\":\"5001\",\"resp_message\":\"\u5931\u8d25\",\"user_type\":null,\"borrower_name\":null,\"borrower_idtype\":null,\"borrower_idcard\":null,\"bank_code\":null,\"bank_card\":null,\"bank_reserved_phone_no\":null,\"user_id\":null}}", 
+            "res_code": 200, 
+            "res_header": [
+                [
+                    ""
+                ]
+            ], 
+            "methods": [
+                "POST"
+            ]
+        }
+    ], 
+    "name": "\u7cfb\u7edfA"
+}
